@@ -39,8 +39,8 @@ for k,y in zip(kp[1:],yahoo[1:]):
         k_val, y_val = float(k[i]), float(y[i])
         adv = k_val - y_val
         row.append(round(adv,2)) #Adv
-        row.append(round(adv * i,2)) #Adv+
-        # Weight each round adv by scoring for round 
+        row.append(round(adv * k_val,2)) #Adv+
+        # adv weighted by win probability
         wp += adv * i
         row.append(round(wp,2))
 
